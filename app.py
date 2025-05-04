@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template
+from flask.cli import ScriptInfo
 
 app = Flask(__name__)
 
@@ -10,5 +11,5 @@ def index():
 def project():
     return render_template('project.html')
 
-if __name__ == '__main__':
-    app.run(debug=False)  # Tắt debug mode khi deploy
+def handler(event, context):
+    return ScriptInfo().load_app().wsgi_app(event, context)

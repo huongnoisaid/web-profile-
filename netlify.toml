@@ -1,6 +1,6 @@
 [build]
-  command = "pip install -r requirements.txt"
-  publish = "static"
+  command = "pip install -r requirements.txt && python build.py"
+  publish = "build"
 
 [[redirects]]
   from = "/*"

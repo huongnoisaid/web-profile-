@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/avatar.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-terminal"></i>
+            huongnoisad
+        </div>
+        <ul>
+            <li><a href="{{ url_for('index') }}" class="{{ 'active' if request.endpoint == 'index' }}">Home</a></li>
+            <li><a href="{{ url_for('project') }}" class="{{ 'active' if request.endpoint == 'project' }}">Project</a></li>
+        </ul>
+    </nav>
+    
+    <div id="particles-js"></div>
+    <button class="reload-btn" onclick="window.location.reload()">
+        <i class="fas fa-sync-alt"></i>
+    </button>
+    
+    {% block content %}{% endblock %}
+    
+    <footer style="text-align: center; padding: 20px; color: #666; font-size: 0.8rem; position: fixed; bottom: 0; width: 100%; background: transparent;">
+        © 2025 huongnoisad - All Rights Reserved.
+    </footer>
+    
+    <script src="{{ url_for('static', filename='js/particles.js') }}"></script>
+</body>
+</html>

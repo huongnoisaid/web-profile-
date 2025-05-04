@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}huongnoisad - Projects{% endblock %}
+
+{% block content %}
+<div class="project-container">
+    <h1 class="page-title">Coding</h1>
+    <div class="projects-grid">
+        <div class="project-card">
+            <img src="{{ url_for('static', filename='img/music.png') }}" alt="Music Discord Bot">
+            <div class="project-content">
+                <h3>Music Discord Bot</h3>
+                <p>A Discord bot that can play music Wave link  from YouTube, SoundCloud, and more. Built with Discord.py.</p>
+                <a href="https://github.com/huongnoi-sad/Music-Discord-Bot" class="view-project" target="_blank">View Project</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
